@@ -60,6 +60,7 @@
             this.goodsId = this.$route.query.goodsId
             // 2.请求数据
             this.getGoodsDetail()
+            // 测试
         },
         methods: {
             getGoodsDetail() {
@@ -121,6 +122,7 @@
             },
             imageLoad() {
                 this.$refs.scroll.refresh()
+
                 this.getThemTopY()
 
                 // this.themTopY = []
