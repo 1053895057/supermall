@@ -1,40 +1,36 @@
 <template>
-
-    <swiper class="detail-swiper">
-        <swiper-item v-for="item in topImages" slot="swiper" class="detail-swiper">
-            <img :src="item.image" alt="">
-        </swiper-item>
+  <div>
+    <swiper class="detail-swiper" v-if="images.length">
+      <swiper-item class="item" v-for="(item, index) in images" :key="index">
+        <img :src="item" alt="">
+      </swiper-item>
     </swiper>
-
-   
+  </div>
 </template>
 
 <script>
-    import { Swiper, SwiperItem } from 'components/commons/swiper'
+  import {Swiper, SwiperItem} from 'components/common/swiper'
 
-    export default {
-        name: "DetailSwiper",
-        components: {
-            Swiper,
-            SwiperItem
-        },
-        props: {
-            topImages: {
-                type: Array,
-                default() {
-                    return []
-                }
-            }
+	export default {
+		name: "DetailSwiper",
+    components: {
+		  Swiper,
+      SwiperItem
+    },
+    props: {
+		  images: {
+		    type: Array,
+        default() {
+		      return []
         }
+      }
     }
+	}
 </script>
 
 <style scoped>
-    .detail-swiper {
-        height: 400px;
-        overflow: hidden;
-    }
-    .detail-swiper img{
-        height: 100%;
-    }
+  .item {
+    text-align: center;
+    height: 300px;
+  }
 </style>
