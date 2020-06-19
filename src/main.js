@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import VueLazyLoad from 'vue-lazyload'
 
+
 Vue.config.productionTip = false
 
 Vue.use(VueLazyLoad, {
@@ -16,3 +17,4 @@ new Vue({
   store,
   router
 }).$mount('#app')
+

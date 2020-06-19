@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>flex 嵌套 之 高度自适应</title>
+    <style media="screen">
+        body, html {
+            height: 70%;
+        }
+        .flex {
+            display: -webkit-flex;
+            display: flex;
+            flex-direction: column;
+        }
+        .outer {
+            height: 100%;
+            border: 1px solid silver;
+        }
+        .item {
+            flex: auto;
+        }
+        .overflow {
+            overflow: auto;
+        }
+        
+
+    </style>
+</head>
+ 
+<body>
+<h1>flex 嵌套布局</h1>
+
+        <div class="flex overflow outer">                  <!-- overflow: auto 高度自适应必须 -->
+            <div style="background-color: yellow;">
+                <h3>内容器 - 头部信息</h3>
+            </div>
+            <div class="item overflow">                         <!-- overflow: auto 高度自适应必须 -->
+                内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>
+                内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>
+                内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>
+                内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>
+                内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>
+                内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>
+                内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>
+                内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>
+                内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>内容溢出滚动部分 <br>
+            </div>
+            <div style="background-color: yellow;">
+                <h3>内容器 - 尾部信息</h3>
+            </div>
+        </div>
+
+ 
+</body>
+<script>
+    function Parent(){
+        this.name='key'
+    }
+    Parent.prototype.age=12;
+    function Son(){
+        this.name='jack'
+    }
+    let sss=new Son()
+    Object.setPrototypeOf(sss,Parent.prototype)
+    console.log(sss)
+
+//     class Cash {
+//     constructor(c){
+//         this.cash = c;
+//     }
+//    static add(c1,c2){
+//        var sum = (c1.cash + c2.cash)+'';
+//        return `${sum[0]}元${sum[1]}角${sum[2]}分`;
+//     }
+//     add(c2){
+//         var sum = (this.cash + c2.cash)+'';
+//         return `${sum[0]}元${sum[1]}角${sum[2]}分`;
+//     }
+//     toString(){
+//         var sum = this.cash.toString()
+//         return `${sum[0]}元${sum[1]}角${sum[2]}分`
+//     }
+//     valueOf(){
+//         console.log(1111)
+//         return this.cash
+//     }
+
+// }
+
+// const cash1 = new Cash(105);
+// const cash2 = new Cash(66);
+
+// const cash3 = cash1.add(cash2);
+// const cash4 = Cash.add(cash1, cash2);
+// const cash5 = new Cash(cash1 + cash2);
+// console.log(`${cash3}`, `${cash4}`, `${cash5}`);
+</script>
+</html>
+
+ 
