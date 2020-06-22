@@ -1,26 +1,36 @@
 <template>
     <div class="btn-page">
-        <btn></btn>
-        <div id="extend-test"></div>
+        <!-- <btn></btn> -->
+        <div id="extend-test" v-if="showExtend">
+            <div>{{text}}</div>
+            <div>{{name}}</div>
+        </div>
     </div>
 </template>
 
 <script>
 import Btn from '@/components/btn'
 
-// import Profile from './extend'
-// console.log(new Profile())
-// new Profile().$mount('#app')
-
-
-
 export default {
+    name:'Test',
     components: { Btn },
+    props:{
+        showExtend:{
+            type:Boolean,
+            default:false
+        }
+    },
     data() {
         return {
-            name: 'test'
+            name: 'tsj'
+        }
+    },
+    methods:{
+        vsll(){
+            console.log(this.showExtend)
         }
     }
+
 }
 </script>
 <style>

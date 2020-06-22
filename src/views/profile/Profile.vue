@@ -1,6 +1,6 @@
 <template>
     <div id="profile">
-        <test>
+        <test v-model="number" componentMsg="我是测试">
             <div slot="a">1111111111111</div>
             <div slot="b">2222222222222222</div>
         </test>
@@ -12,7 +12,6 @@
 
         <!--2.没有单独封装: 不同的地方太多, 需要传过多的参数-->
         <section class="account">
-            <div class="test">test</div>
             <div class="account-item">
                 <div class="number">
                     <span class="balance">0.00</span>元
@@ -36,6 +35,7 @@
         <!--3.封装成一个整体-->
         <list-view :list-data="orderList" class="order-list"></list-view>
         <list-view :list-data="serviceList" class="service-list"></list-view>
+        <div @click="showToast">点击</div>
     </div>
 </template>
 
@@ -63,7 +63,8 @@ export default {
             serviceList: [
                 { icon: '#service', iconColor: '#ff8198', info: '我的购物车' },
                 { icon: '#download', iconColor: '#ff8198', info: '下载购物APP' }
-            ]
+            ],
+            number:55
         }
     },
     mounted: function() {
@@ -90,6 +91,11 @@ export default {
             this.$router.push({
                 path: '/test'
             })
+        },
+        showToast(){
+            this.$toast('测试extend',100)
+    
+
         }
     }
 }

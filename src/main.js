@@ -3,7 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import VueLazyLoad from 'vue-lazyload'
-
+import testEntend from './views/test/extend.js'
+Vue.use(testEntend)
 
 Vue.config.productionTip = false
 
