@@ -36,6 +36,7 @@
         <list-view :list-data="orderList" class="order-list"></list-view>
         <list-view :list-data="serviceList" class="service-list"></list-view>
         <div @click="showToast">点击</div>
+        <div @click="showDialog">dialog</div>
     </div>
 </template>
 
@@ -64,7 +65,7 @@ export default {
                 { icon: '#service', iconColor: '#ff8198', info: '我的购物车' },
                 { icon: '#download', iconColor: '#ff8198', info: '下载购物APP' }
             ],
-            number:55
+            number: 55
         }
     },
     mounted: function() {
@@ -76,9 +77,7 @@ export default {
             // const arg=arguments.slice(1)
             // 相当于将arguments转换为数组对象
             var args = Array.prototype.slice.call(arguments, 1)
-            console.log(arguments)
             return function() {
-                console.log(arguments)
                 var innerArgs = Array.prototype.slice.call(arguments)
                 var finalArgs = args.concat(innerArgs)
                 return fn.apply(null, finalArgs)
@@ -92,10 +91,17 @@ export default {
                 path: '/test'
             })
         },
-        showToast(){
-            this.$toast('测试extend',100)
-    
-
+        showToast() {
+            this.$toast('测试extend', 100)
+        },
+        showDialog() {
+            this.$dialog('提示', '404 Not Found')
+                .then(data => {
+                    console.log(data)
+                })
+                .catch(() => {
+                    console.log('取消删除')
+                })
         }
     }
 }
@@ -114,8 +120,8 @@ export default {
 
 .account {
     display: flex;
-    .test{
-        color:#ff0;
+    .test {
+        color: #ff0;
     }
 }
 

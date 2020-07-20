@@ -1,10 +1,10 @@
 <template>
     <div class="btn-page">
-        <!-- <btn></btn> -->
-        <div id="extend-test" v-if="showExtend">
+        <btn></btn>
+        <!-- <div id="extend-test" v-if="showExtend">
             <div>{{text}}</div>
             <div>{{name}}</div>
-        </div>
+        </div> -->
     </div>
 </template>
 

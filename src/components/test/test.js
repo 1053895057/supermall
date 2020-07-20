@@ -9,7 +9,7 @@ export default {
             type: Number,
             default: 0,
             validator: function (value) {
-                console.log(value)
+                // console.log(value)
                 return value
             }
         }
@@ -21,28 +21,28 @@ export default {
     },
     watch:{
         componentProps(val){
-            console.log(val)
+            // console.log(val)
         }
     },
     beforeCreate() {
-        console.log('beforeCreate')
+        // console.log('beforeCreate')
     },
     created() {
-        console.log('created')
+        // console.log('created')
     },
     beforeMount() {
-        console.log('beforeMount')
+        // console.log('beforeMount')
     },
     mounted() {
-        console.log('mounted')
+        // console.log('mounted')
     },
     methods: {
         toast(e) {
-            console.log(e)
+            // console.log(e)
         }
     },
     render(h) {
-        console.log('render')
+        // console.log('render')
         return (
             <div class="renderComponent">
                 <div class="renderComponentred">
